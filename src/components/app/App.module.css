@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #ebf5fc;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 350px;
+  align-items: center;
+  background: #ebf5fc;
+  margin: 20px auto;
+  padding: 40px 40px;
+  border-radius: 10px;
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.8),
+    5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tytle {
+  color: #32a3b1;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}

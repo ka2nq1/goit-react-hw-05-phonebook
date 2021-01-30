@@ -1,0 +1,39 @@
+.ListItem-enter-active {
+  animation: task 250ms ease-in alternate-reverse;
+}
+
+.ListItem-exit-active {
+  animation: back 250ms ease-in;
+}
+
+@keyframes task {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    opacity: 0.7;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}
+
+@keyframes back {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    opacity: 0.7;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}

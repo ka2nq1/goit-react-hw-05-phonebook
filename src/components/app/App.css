@@ -1,0 +1,17 @@
+.titleTransition-appear-active {
+  animation: task 500ms ease-in alternate-reverse;
+}
+
+@keyframes task {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
