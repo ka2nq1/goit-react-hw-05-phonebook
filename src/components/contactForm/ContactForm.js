@@ -84,13 +84,5 @@ export default class ContactForm extends Component {
 }
 
 ContactForm.propTypes = {
-  state: PropTypes.shape({
-    contacts: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string,
-        namber: PropTypes.string,
-      })
-    ),
-  }).isRequired,
   addContact: PropTypes.func.isRequired,
 };

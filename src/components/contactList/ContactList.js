@@ -22,6 +22,5 @@ function ContactList({contacts, onRemoveContact}) {
 export default ContactList;
 
 ContactList.propTypes = {
-    contacts: PropTypes.arrayOf().isRequired,
     onRemoveContact: PropTypes.func.isRequired,
 };
