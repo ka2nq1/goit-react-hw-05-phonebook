@@ -15,25 +15,3 @@
     transform: translateY(0);
   }
 }
-
-.filterTitleAnimate-enter {
-  opacity: 0;
-  transform: scale(0.1);
-}
-
-.filterTitleAnimate-enter-active {
-  opacity: 1;
-  transform: scale(1);
-  transition: all 250ms linear;
-}
-
-.filterTitleAnimate-exit {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.filterTitleAnimate-exit-active {
-  opacity: 0;
-  transform: scale(0.1);
-  transition: all 250ms linear;
-}
