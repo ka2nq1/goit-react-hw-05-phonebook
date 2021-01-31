@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from "prop-types";
 import { CSSTransition } from 'react-transition-group';
 import styles from './ContactForm.module.css';
 import './ContactForm.css';
@@ -81,3 +82,15 @@ export default class ContactForm extends Component {
         )
     }
 }
+
+ContactForm.propTypes = {
+  state: PropTypes.shape({
+    contacts: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        namber: PropTypes.string,
+      })
+    ),
+  }).isRequired,
+  addContact: PropTypes.func.isRequired,
+};
