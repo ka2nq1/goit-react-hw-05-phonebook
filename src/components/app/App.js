@@ -79,9 +79,18 @@ export default class App extends Component {
                 >
                     <h1 className={styles.tytle}>Phonebook</h1>
                 </CSSTransition>
-                <ContactForm addContact={this.addContact} contacts={contacts}/>
-                <h2 className={styles.tytle}>Contacts</h2>
-                <Filter filter={filter} onChange={this.changeFilter} />
+                <ContactForm addContact={this.addContact} contacts={contacts} />
+                {contacts.length > 0 &&
+                    <h2 className={styles.tytle}>Contacts</h2>
+                }
+                <CSSTransition
+                    in={contacts.length > 1}
+                    classNames="filterTitleAnimate"
+                    timeout={250}
+                    unmountOnExit
+                >
+                    <Filter filter={filter} onChange={this.changeFilter} />
+                </CSSTransition>
                 <ContactList contacts={visibleContacts} onRemoveContact={this.removeContact} />
             </div>
         )

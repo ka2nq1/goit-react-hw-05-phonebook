@@ -22,21 +22,7 @@ export default class ContactForm extends Component {
         })
     }
 
-    // handleSubmit = e => {
-    //     e.preventDefault();
-
-    //     if (this.props.contacts.find(contact => contact.name === this.state.name)) {
-    //         alert(`${this.state.name} is already in contacts.`)
-    //     } else {
-    //         this.props.addContact({ name: this.state.name, number:this.state.number })
-    //         this.setState({
-    //             name: '',
-    //             number: ''
-    //         });
-    //     }
-    // };
-
-    submitHandler = (e) => {
+    handleSubmit = (e) => {
     const { name, number, alert } = this.state;
     e.preventDefault();
 
@@ -44,16 +30,16 @@ export default class ContactForm extends Component {
     const isExists = contacts.find((contact) => contact.name === name);
 
     if (isExists) {
-      this.toggleAlert(alert);
+      this.alertToggle(alert);
       return this.reset();
     }
 
-    const singleContact = {
+    const contact = {
         name,
         number,
     };
 
-    this.props.addContact(singleContact);
+    this.props.addContact(contact);
     this.reset();
     };
   
@@ -61,7 +47,7 @@ export default class ContactForm extends Component {
       this.setState({ ...this.formInitialState });
     };
   
-    toggleAlert = (status) => {
+    alertToggle = (status) => {
       this.setState({ alert: !status });
     };
 
@@ -78,12 +64,12 @@ export default class ContactForm extends Component {
                   onEntered={alertDelay}
                 >
                     <button
-                        onClick={this.toggleAlert}
+                        onClick={this.alertToggle}
                         className="AlertBtn"
                     >{`Contact already exists!`}</button>
                 </CSSTransition>
                 <div className={styles.container}>
-                    <form className={styles.form} onSubmit={this.submitHandler}>
+                    <form className={styles.form} onSubmit={this.handleSubmit}>
                         <label className={styles.label} htmlFor="name">Name</label>
                         <input className={styles.input} type='text' id='name' name='name' placeholder="Name Surname" value={name} onChange={this.handleChange} />
                         <label className={styles.label} htmlFor='number'>Number</label>

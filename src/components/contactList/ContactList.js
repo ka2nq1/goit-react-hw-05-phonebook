@@ -1,15 +1,19 @@
 import React from 'react';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ContactListItem from '../contactListItem/ContactListItem';
 import styles from './ContactList.module.css';
+import './ContactList.css';
 
 function ContactList({contacts, onRemoveContact}) {
     return (
         <div className={styles.container}>
-            {contacts.length > 0 &&
-                <ul className={styles.list}>
-                <ContactListItem contacts={contacts} onRemoveContact={onRemoveContact}/>
-                </ul>
-            }
+            <TransitionGroup component="ul" className={styles.list}>
+                {contacts.map((contact, id) => (
+                <CSSTransition key={id} classNames="listItem" timeout={250}>
+                    <ContactListItem contact={contact} onRemoveContact={onRemoveContact} />
+                </CSSTransition>
+                ))}
+            </TransitionGroup>
         </div>
     )
 }

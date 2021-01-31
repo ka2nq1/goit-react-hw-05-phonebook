@@ -9,7 +9,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   width: 350px;
   align-items: center;
   background: #ebf5fc;

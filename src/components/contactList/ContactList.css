@@ -1,0 +1,39 @@
+.listItem-enter-active {
+  animation: add 250ms ease-in alternate-reverse;
+}
+
+.listItem-exit-active {
+  animation: delete 250ms ease-in;
+}
+
+@keyframes add {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 0.7;
+    transform: translateY(-40%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+@keyframes delete {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    opacity: 0.7;
+    transform: translateX(-5%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+}
